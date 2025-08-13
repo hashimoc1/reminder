@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Toast Container -->
+        <div id="toast-container" class="toast-container"></div>
+
+        <!-- Shader Selector -->
+        <div class="shader-selector">
+            <div class="shader-buttons">
+                <button class="shader-btn active" data-shader="1" title="Plasma Shader">
+                    <div class="shader-preview shader-preview-1"></div>
+                </button>
+                <button class="shader-btn" data-shader="2" title="Ether Shader">
+                    <div class="shader-preview shader-preview-2"></div>
+                </button>
+                <button class="shader-btn" data-shader="3" title="Nebula Shader">
+                    <div class="shader-preview shader-preview-3"></div>
+                </button>
+                <button class="shader-btn" data-shader="4" title="Wavy Lines Shader">
+                    <div class="shader-preview shader-preview-4"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Shader Canvas Container -->
+            <div class="shader-container">
+                <canvas id="shader-canvas" width="600" height="600"></canvas>
+                
+                <!-- Center Reminder Display -->
+                <div class="center-display" id="center-display">
+                    <div class="reminder-carousel" id="reminder-carousel"></div>
+                    <div class="mark-done-btn" id="mark-done-btn">
+                        <button>Mark as done</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clear Reminders Button -->
+            <div class="clear-button-container" id="clear-button-container">
+                <button id="clear-reminders-btn" class="clear-btn">Clear Reminders</button>
+            </div>
+        </div>
+
+        <!-- Reminder Input Modal -->
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>What do you want to be reminded today?</h1>
+                    <p>Add time for when you need to be reminded</p>
+                </div>
+                <form id="reminder-form" class="reminder-form">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="reminder-message" 
+                            placeholder="I need to..." 
+                            required
+                            autocomplete="off"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input 
+                            type="time" 
+                            id="reminder-time" 
+                            required
+                        >
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Set Reminder</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
